@@ -1,0 +1,30 @@
+body {
+    font-family:'Montserrat', Tahoma, Geneva, sans-serif;
+    margin: 5% 0px;
+}
+
+.toggle {
+    height:45px;
+    width:45px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    background-color: #eee;
+    margin: 15px 2px;
+    padding: 11px 4px;
+}
+
+.toggle.selected {
+    padding-top:9px;
+    border: 4px solid #46a3b1;
+}
+
+.price-info {
+    padding:5% 0px;
+    padding-left:5%;
+}
+
+.price {
+    color:red;
+    font-size:30px;
+    font-weight: bold;
+}

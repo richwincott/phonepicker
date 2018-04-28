@@ -1,0 +1,44 @@
+<div ng-repeat="group in vm.data">
+    <div class="row">
+        <div class="col-xs-5 text-center">
+            <img ng-src="{{'assets/images/' + vm.selected.merchandisingMedia[0].value.split('/')[3]}}" style="width:100%; max-width:300px;" />
+        </div>
+        <div class="col-xs-7">
+            <h2>{{group.groupName}}</h2>
+            <br/>
+            <ul class="list-unstyled list-inline">
+                <li ng-repeat="i in vm.getNumber(group.rating) track by $index"><img width="20px" src="assets/star-icon.png" /></li>
+            </ul>
+            <br/>
+            <p>{{vm.selected.displayDescription}}</p>
+            <br/>
+            <div class="row">
+                <div class="col-xs-6">
+                    Color: <b>{{vm.selected.colourName}}</b>
+                    <ul class="list-unstyled list-inline">
+                        <li ng-repeat="colour in vm.choices.colours">
+                            <a class="btn btn-default toggle" ng-class="vm.chosen.colour == colour ? 'selected' : ''" ng-click="vm.setColour(colour)" style="background-color:{{colour.hex}}"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xs-6">
+                    Capacity: <b>{{vm.selected.memory}}</b>
+                    <ul class="list-unstyled list-inline">
+                        <li ng-repeat="memory in vm.choices.memory">
+                            <a class="btn btn-default toggle" ng-class="vm.chosen.memory == memory ? 'selected' : ''" ng-click="vm.setMemory(memory)">{{memory.substring(0, memory.length-2)}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br/>
+            <div class="row" style="background-color: #f5f5f5; padding-top:2%; padding-bottom:2%;">
+                <div class="col-xs-6 price-info" style="border-right:2px solid #ddd">
+                    from <span class="price">£{{vm.selected.priceInfo.hardwarePrice.oneOffPrice.gross}}</span> upfront cost
+                </div>
+                <div class="col-xs-6 price-info">
+                    When you pay <span class="price">£{{vm.selected.priceInfo.bundlePrice.monthlyPrice.gross}}</span> a month
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

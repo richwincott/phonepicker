@@ -1,0 +1,27 @@
+{
+  "name": "phonepicker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.15",
+    "angular": "^1.6.10",
+    "angular-ui-router": "^1.0.3",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.7",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^3.0.0"
+  }
+}
