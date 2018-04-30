@@ -1,6 +1,4 @@
-var app = angular.module("phonepicker");
-
-app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", function ($stateProvider, $urlRouterProvider, $locationProvider) {
+app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider", ($stateProvider, $urlRouterProvider, $locationProvider) => {
     $urlRouterProvider.otherwise("/");
     $locationProvider.hashPrefix("");
       $stateProvider

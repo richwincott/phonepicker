@@ -1,1 +1,1 @@
-var app = angular.module("phonepicker", ["ui.router"]);
+const app = angular.module("phonepicker", ["ui.router"]);

@@ -3,6 +3,7 @@ const concat = require('gulp-concat');
 const minifyCSS = require('gulp-csso');
 const uglify = require('gulp-uglify');
 const gulpif = require('gulp-if');
+const babel = require('gulp-babel');
 const pump = require('pump');
 const browserSync = require('browser-sync');
 
@@ -26,6 +27,7 @@ gulp.task('css', function(cb) {
 gulp.task('js', function(cb) {
     pump([
         gulp.src(js),
+        gulpif(!devMode, babel()),
         gulpif(!devMode, uglify()),
         concat('scripts.js'),
         gulp.dest('./build/js'),

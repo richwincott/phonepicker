@@ -1,7 +1,5 @@
-var app = angular.module("phonepicker");
-
 app.controller("homeController", ["$scope", "homeService", function ($scope, homeService) {
-    var vm = this;
+    let vm = this;
 
     vm.selected = {};
 
@@ -15,11 +13,11 @@ app.controller("homeController", ["$scope", "homeService", function ($scope, hom
         "memory": []
     }
 
-    homeService.fetch("assets/data/phones.json").then(function (response) {
-        console.log(response.data);
+    homeService.fetch("assets/data/phones.json").then((response) => {
+        //console.log(response.data);
         vm.data = response.data;
         vm.selected = vm.data[0].deviceSummary[0];
-        vm.data[0].deviceSummary.forEach(function(device) {
+        vm.data[0].deviceSummary.forEach((device) => {
             if (!vm.choices.colours[device.colourName])
                 vm.choices.colours[device.colourName] = {
                     name: device.colourName,
@@ -32,12 +30,12 @@ app.controller("homeController", ["$scope", "homeService", function ($scope, hom
         });
     })
 
-    vm.getNumber = function (num) {
+    vm.getNumber = (num) => {
         return new Array(Math.ceil(num));   
     }
 
-    vm.findDevice = function () {
-        vm.data[0].deviceSummary.forEach(function(device) {
+    vm.findDevice = () => {
+        vm.data[0].deviceSummary.forEach((device) => {
             if (device.colourName == vm.chosen.colour.name) {
                 if (device.memory == vm.chosen.memory) {
                     vm.selected = device;
@@ -46,12 +44,12 @@ app.controller("homeController", ["$scope", "homeService", function ($scope, hom
         });
     }
 
-    vm.setMemory = function (memory) {
+    vm.setMemory = (memory) => {
         vm.chosen.memory = memory;
         vm.findDevice();
     }
 
-    vm.setColour = function (colour) {
+    vm.setColour = (colour) => {
         vm.chosen.colour = colour;
         vm.findDevice();
     }    
