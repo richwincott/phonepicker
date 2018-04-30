@@ -1,10 +1,21 @@
 # phonepicker
-iPhone colour and size picker written with AngularJS.
+iPhone colour and size picker written with `AngularJS`.
 
-This app uses Gulp, so..
+## Requirements
+* Node
+* NPM
 
-`gulp start` to start the development server.
+## Running the app
+First run `npm install` to fetch the app dependancies.
 
-and
+Then the app uses Gulp, so to start the development server run..
+```
+gulp start
+```
+and to create production build
+```
+gulp build
+```
+The app is also hosted on my personal website, link below.
 
-`gulp build` to create a production build.
+[http://www.richardwincott.co.uk/phonepicker](http://www.richardwincott.co.uk/phonepicker)
